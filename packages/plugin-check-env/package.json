@@ -1,6 +1,6 @@
 {
   "name": "@tarox/plugin-check-env",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "taro插件，用于在编译前的环境变量检查。",
   "main": "index.js",
   "scripts": {
