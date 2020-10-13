@@ -23,11 +23,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ strategy.matrix.node-version }}
-      - name: 执行npm install
-        run: |
-          npm install
-        env:
-          CI: true
       - name: 执行npm run build
         run: |
           cd website
