@@ -16,6 +16,10 @@ lerna init
 
 根目录中执行 `lerna bootstrap`，将会为所有的子包安装依赖。
 
+4. 发布包
+
+执行 `lerna publish` 即可发布至npm。
+
 ## 参考
 
 - [lerna管理前端packages的最佳实践](http://www.sosout.com/2018/07/21/lerna-repo.html)
