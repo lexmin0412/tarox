@@ -51,5 +51,8 @@
     "http-proxy-middleware": "^1.0.3",
     "path-to-regexp": "^6.1.0"
   },
-  "gitHead": "fba4bde10436022e77af33c9e33a1b0a01b24225"
+  "gitHead": "6b7460a5c66938389fa7f3335bc2364d95fcb5b3",
+  "publishConfig": {
+    "access": "public"
+  }
 }
