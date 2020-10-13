@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "install": "lerna bootstrap"
+    "install": "lerna bootstrap",
+    "publish": "lerna publish"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
