@@ -12,8 +12,12 @@ export default (ctx, options) => {
     Promise.all([
       getPages(ctx, options),
       getSubPackages(ctx, options)
-    ]).then((res)=>{
-      initApp(res[0], res[1])
+    ]).then((res: Array<any>)=>{
+      initApp({
+        pages: res[0], 
+        subPackages: res[1],
+        ctx
+      })
     })
     // 获取所有组件生成文件名
     getComponent(options)

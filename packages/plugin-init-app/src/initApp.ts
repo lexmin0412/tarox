@@ -1,10 +1,14 @@
 /**
  * 合并模版和配置项生成app.tsx文件
  */
-
 const fs = require('fs');
 const chalk = require('chalk');
-const initApp = ({pages, subPackages, ctx}) => {
+const initApp = (config: {
+  pages: Array<any>
+  subPackages: Array<any>
+  ctx: any
+}) => {
+  const { pages, subPackages } = config
   let joinPages = '';
   pages.forEach((item, index) => {
     pages[index] = `
