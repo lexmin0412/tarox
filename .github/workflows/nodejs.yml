@@ -32,7 +32,7 @@ jobs:
       - name: 进入dist文件夹 准备提交代码
         run: |
 
-
+          cd website/build/
           echo 'ls 查看dist文件夹下的所有文件'
           ls
 
