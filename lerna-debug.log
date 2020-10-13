@@ -1,0 +1,12 @@
+12 error Error: Command failed: git rev-parse --abbrev-ref HEAD
+12 error fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+12 error Use '--' to separate paths from revisions, like this:
+12 error 'git <command> [<revision>...] -- [<file>...]'
+12 error
+12 error HEAD
+12 error
+12 error     at makeError (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:174:9)
+12 error     at Function.module.exports.sync (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:338:15)
+12 error     at Object.execSync (/usr/local/lib/node_modules/lerna/node_modules/@lerna/child-process/index.js:26:16)
+12 error     at currentBranch (/usr/local/lib/node_modules/lerna/node_modules/@lerna/version/lib/get-current-branch.js:11:31)
+12 error     at VersionCommand.initialize (/usr/local/lib/node_modules/lerna/node_modules/@lerna/version/index.js:119:28)
