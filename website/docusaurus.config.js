@@ -2,7 +2,7 @@ module.exports = {
   title: 'TaroX',
   tagline: 'Taro3生态工具集',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/tarox/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'cathe-zhang', // Usually your GitHub org/user name.
