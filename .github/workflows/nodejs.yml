@@ -30,13 +30,13 @@ jobs:
           npm run build
       - name: 进入dist文件夹 准备提交代码
         run: |
-          # echo 'cd dist/ 进入dist文件夹'
-          cd build/
 
           echo 'ls 查看dist文件夹下的所有文件'
           ls
+          
+          cd build/
 
-          # echo 'git init'
+          echo 'git init'
           git init
 
           echo 'git config'
