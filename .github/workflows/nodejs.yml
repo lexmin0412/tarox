@@ -28,13 +28,13 @@ jobs:
           cd website
           npm install
           npm run build
+          cd build
       - name: 进入dist文件夹 准备提交代码
         run: |
 
+
           echo 'ls 查看dist文件夹下的所有文件'
           ls
-          
-          cd build/
 
           echo 'git init'
           git init
