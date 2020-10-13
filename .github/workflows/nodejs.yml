@@ -26,6 +26,7 @@ jobs:
       - name: 执行npm run build
         run: |
           cd website
+          npm install
           npm run build
       - name: 进入dist文件夹 准备提交代码
         run: |
