@@ -32,7 +32,7 @@ export default (ctx) => {
       const pageLine = projectConfigTemplate.findIndex(item => item.indexOf('appid') > -1);
 
       // appid替换
-      projectConfigTemplate[pageLine] = `  "appid": "${USE_APPID}",`;
+      projectConfigTemplate[pageLine] = `  "appid": ${USE_APPID},`;
       const templateStr = `${projectConfigTemplate.join('\n')}`;
 
       // 项目名称替换
@@ -47,7 +47,7 @@ export default (ctx) => {
   "miniprogramRoot": "./dist",
   "projectname": "${runOpts.config.projectName||'Taro2.x项目模板'}",
   "description": "taro2.0项目模板",
-  "appid": "${USE_APPID}",
+  "appid": ${USE_APPID},
   "setting": {
     "urlCheck": true,
     "es6": false,
