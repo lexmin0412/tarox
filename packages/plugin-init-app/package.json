@@ -1,6 +1,6 @@
 {
   "name": "@tarox/plugin-init-app",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Taro应用初始化插件",
   "main": "index.js",
   "scripts": {
