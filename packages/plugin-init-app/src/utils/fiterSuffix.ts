@@ -5,6 +5,9 @@
  */
 const isFileSupported = (fileName: string, supportedSuffix: Array<string>) => {
   const fileSuffix = fileName.slice(fileName.lastIndexOf('.'));
+  if ( !supportedSuffix ) {
+    return false
+  }
   if (!supportedSuffix.includes(fileSuffix)) {
     return false
   }

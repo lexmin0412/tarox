@@ -108,7 +108,7 @@ const getSubPackages = (ctx, options) => {
                 return
               }
               // 过滤文件类型
-              if (!isFileSupported(deepInnerItem, compSuffix)) {
+              if (compSuffix && !isFileSupported(deepInnerItem, compSuffix)) {
                 return
               }
               if (filterDirs.includes(deepInnerItem)) {
@@ -121,7 +121,7 @@ const getSubPackages = (ctx, options) => {
           }
           else {
             // 过滤文件类型
-            if (!isFileSupported(inItem, compSuffix)) {
+            if (compSuffix && !isFileSupported(inItem, compSuffix)) {
               return
             }
             const sliceRes = inItem.slice(0, inItem.indexOf('.'));

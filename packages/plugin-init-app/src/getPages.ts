@@ -33,7 +33,7 @@ const pages = [
         // 去除后缀名
         innerDir.forEach(inItem => {
           // 过滤文件类型
-          if (!isFileSupported(inItem, compSuffix)) {
+          if (compSuffix && !isFileSupported(inItem, compSuffix)) {
             return
           }
           

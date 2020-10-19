@@ -32,7 +32,7 @@ const checkComponent = (options) => {
     const newLines: any = []
     innerDir.forEach((inItem) => {
       // 过滤文件类型
-      if (!isFileSupported(inItem, compSuffix)) {
+      if (compSuffix && !isFileSupported(inItem, compSuffix)) {
         return
       }
       const sliceRes = inItem.slice(0, inItem.indexOf('.'))
