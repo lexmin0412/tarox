@@ -1,5 +1,6 @@
 const fs = require('fs');
 import isFileSupported from './utils/fiterSuffix'
+import { Logx } from '@tarox/helper-node'
 
 /**
  * 判断一个path是否是文件夹
@@ -57,9 +58,9 @@ const handlePurifyArr = (weapp, h5, ctx, pages, subPackageItem, path) => {
  */
 const getSubPackages = (ctx, options) => {
   return new Promise(resolve => {
-    const {chalk} = ctx.helper;
     const {homeRoute, weapp, compSuffix, h5, subPackages: subPackagesConfig} = options;
-    console.log(chalk.yellow('开始 '), '进入扫描分包插件');
+
+    Logx.start('进入扫描分包插件')
     let excludesSubPackages: any[] = [];
     let includesSubPackages: any[] = []
     if (subPackagesConfig && subPackagesConfig.excludes) {
@@ -87,7 +88,7 @@ const getSubPackages = (ctx, options) => {
     outerDirs.forEach(item => {
       // 跳过特殊文件夹
       if (testFunc(item) && isDirectory(`./src/${item}`)) {
-        console.log(chalk.magentaBright('读取 '), `发现分包 ${item}`);
+        Logx.read('发现分包', item)
         const subPackageItem: any = {};
         subPackageItem.root = item;
         subPackageItem.name = item;
@@ -144,9 +145,8 @@ const getSubPackages = (ctx, options) => {
 ]
 
 module.exports = pages`;
-
-    console.log(`${chalk.blueBright('结束 ')}`, `分包页面扫描完成✅
-    `)
+    Logx.end('分包页面扫描完成✅')
+    console.log(``)
     resolve(subPackages)
   });
 };

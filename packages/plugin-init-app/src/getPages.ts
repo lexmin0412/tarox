@@ -1,18 +1,18 @@
 const fs = require('fs')
 import isFileSupported from './utils/fiterSuffix'
+import { Logx } from '@tarox/helper-node'
 
 /**
  * 扫描pages文件夹生成routes.js 即app.tsx中的pages配置项
  */
 const getPages = (ctx, options) => {
   return new Promise(resolve => {
-    const { chalk } = ctx.helper
     const {homeRoute, compSuffix, weapp, h5 } = options
-    console.log(chalk.yellow('开始 '), '进入扫描页面插件')
+    Logx.start('进入扫描页面插件')
 
     if (fs.existsSync('./src/pages/routes.js')) {
       fs.unlinkSync('./src/pages/routes.js')
-      console.log(`${chalk.redBright('删除 ')}`, `旧的${chalk.greenBright('pages/route.js')}`)
+      Logx.unlink('清除旧的路由文件', 'pages/route.js')
     }
 
     let indexLines = `/**
@@ -44,7 +44,7 @@ const pages = [
             !['component'].includes(sliceRes)) {
             // 拼接后的路由
             const sliceResPageRoute = `pages/${item}/${sliceRes}`;
-            console.log(chalk.magentaBright('读取 '), `发现页面 ${sliceResPageRoute}`);
+            Logx.read('发现页面', sliceResPageRoute)
 						/**
 						 * 小程序配置处理
 						 */
@@ -135,10 +135,10 @@ module.exports = pages`
     });
 
     fs.writeFileSync('./src/pages/routes.js', indexLines)
-    console.log(`${chalk.cyanBright('创建 ')}`, `pages/routes.js 成功
-${
-      chalk.blueBright('结束 ')}`, `页面扫描完成✅
-`)
+    Logx.create('pages/routes.js', '成功')
+    console.log('')
+    Logx.end('页面扫描完成✅')
+    console.log('')
     resolve(resolvePages)
   })
 }

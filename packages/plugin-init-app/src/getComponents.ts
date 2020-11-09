@@ -1,6 +1,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 import isFileSupported from './utils/fiterSuffix'
+import { Logx } from '@tarox/helper-node'
 
 /**
  * 扫描components文件夹生成index.ts 以支持一行代码写完组件引入
@@ -8,11 +9,11 @@ import isFileSupported from './utils/fiterSuffix'
  */
 const checkComponent = (options) => {
   const {compSuffix} = options
-  console.log(chalk.yellow('开始 '), '进入扫描组件插件')
+  Logx.start('进入扫描组件插件')
 
   if (fs.existsSync('./src/components/index.ts')) {
     fs.unlinkSync('./src/components/index.ts')
-    console.log(`${chalk.redBright('删除 ')} 旧的${chalk.greenBright('index.ts')}`)
+    Logx.unlink('清除旧的组件入口文件', 'components/index.ts')
   }
 
   let indexLines = `/**
@@ -61,10 +62,10 @@ export {
 }`
 
   fs.writeFileSync('./src/components/index.ts', indexLines)
-  console.log(`${chalk.cyanBright('创建 ')}`, `components/index.ts 成功
-${
-    chalk.blueBright('结束 ')}`, `组件扫描完成✅
-` )
+  Logx.create('components/index.ts', '成功')
+  console.log('')
+  Logx.end('组件扫描完成✅')
+  console.log('')
 }
 
 export default checkComponent

@@ -2,11 +2,12 @@ import getPages from './getPages'
 import initApp from './initApp'
 import getComponent from './getComponents'
 import getSubPackages from './getSubPackages'
+import { Logx } from '@tarox/helper-node'
 
 export default (ctx, options) => {
   ctx.onBuildStart(() => {
-    console.log(ctx.helper.chalk.yellow('插件 '), 'taro-plugin-init-app');
-    console.log(ctx.helper.chalk.greenBright('开始 '), '初始化入口文件');
+    Logx.plugin('taro-plugin-init-app')
+    Logx.start('初始化入口配置')
 
     // 扫描页面
     Promise.all([

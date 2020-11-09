@@ -2,7 +2,7 @@
  * 合并模版和配置项生成app.tsx文件
  */
 const fs = require('fs');
-const chalk = require('chalk');
+import { Logx } from '@tarox/helper-node'
 const initApp = (config: {
   pages: Array<any>
   subPackages: Array<any>
@@ -54,13 +54,12 @@ const initApp = (config: {
     }
   });
   const templateStr = `${endTemplate.join('\n')}`;
-  // console.log('生成的templateStr', templateStr)
   if (fs.existsSync('./src/app.tsx')) {
     fs.unlinkSync('./src/app.tsx');
   }
   fs.writeFileSync('./src/app.tsx', templateStr);
-  console.log(chalk.greenBright(chalk`✅ 初始化成功 更新入口文件 {green.bold app.tsx}
-`));
+  Logx.remind('✅ 初始化成功 更新入口文件', 'app.tsx')
+  console.log('')
 };
 
 export default initApp
