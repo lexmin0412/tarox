@@ -1,0 +1,20 @@
+{
+  "name": "@tarox/helper-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "cathe-zhang <zhangle_web@163.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.6",
+    "chalk": "^4.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
