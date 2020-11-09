@@ -1,7 +1,0 @@
-42 error Error: Command failed: git add -- packages/helper-node/package.json packages/plugin-init-app/package.json packages/plugin-init-app/package-lock.json lerna.json
-42 error The following paths are ignored by one of your .gitignore files:
-42 error packages/plugin-init-app/package-lock.json
-42 error Use -f if you really want to add them.
-42 error
-42 error     at makeError (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:174:9)
-42 error     at /usr/local/lib/node_modules/lerna/node_modules/execa/index.js:278:16
