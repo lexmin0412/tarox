@@ -10,9 +10,9 @@ const getPages = (ctx, options) => {
     const {homeRoute, compSuffix, weapp, h5 } = options
     Logx.start('进入扫描页面插件')
 
-    if (fs.existsSync('./src/pages/routes.js')) {
-      fs.unlinkSync('./src/pages/routes.js')
-      Logx.unlink('清除旧的路由文件', 'pages/route.js')
+    if (fs.existsSync('./src/pages.js')) {
+      fs.unlinkSync('./src/pages.js')
+      Logx.unlink('清除旧的路由文件', 'src/pages.js')
     }
 
     let indexLines = `/**
@@ -134,8 +134,8 @@ module.exports = pages`
       }
     });
 
-    fs.writeFileSync('./src/pages/routes.js', indexLines)
-    Logx.create('pages/routes.js', '成功')
+    fs.writeFileSync('./src/pages.js', indexLines)
+    Logx.create('src/pages.js', '成功')
     console.log('')
     Logx.end('页面扫描完成✅')
     console.log('')

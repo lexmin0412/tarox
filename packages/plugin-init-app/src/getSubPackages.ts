@@ -61,6 +61,12 @@ const getSubPackages = (ctx, options) => {
     const {homeRoute, weapp, compSuffix, h5, subPackages: subPackagesConfig} = options;
 
     Logx.start('进入扫描分包插件')
+
+    if (fs.existsSync('./src/subPackages.js')) {
+      fs.unlinkSync('./src/subPackages.js')
+      Logx.unlink('清除旧的路由文件', 'src/subPackages.js')
+    }
+
     let excludesSubPackages: any[] = [];
     let includesSubPackages: any[] = []
     if (subPackagesConfig && subPackagesConfig.excludes) {
@@ -145,6 +151,9 @@ const getSubPackages = (ctx, options) => {
 ]
 
 module.exports = pages`;
+    fs.writeFileSync('./src/subPackages.js', indexLines)
+    Logx.create('./src/subPackages.js', '成功')
+    console.log('')
     Logx.end('分包页面扫描完成✅')
     console.log(``)
     resolve(subPackages)
