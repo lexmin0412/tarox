@@ -33,7 +33,7 @@ export const processTypeMap: IProcessTypeMap = {
   },
   [processTypeEnum.CONVERT]: {
     name: '转换',
-    color: chalk.rgb(255, 136, 0)
+    color: 'green'
   },
   [processTypeEnum.COPY]: {
     name: '拷贝',

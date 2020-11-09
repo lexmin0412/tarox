@@ -12,89 +12,91 @@ type LogxFuncParams = {
   filePath: string
 }
 
+type LogxFunc = (...strArr: string[]) => void
+
 class Logx {
   /**
    * 开始 
    */
-  start(params: LogxFuncParams) {
-    logx(processTypeEnum.START, params.title, params.filePath)
+  start: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.START, ...strArr)
   }
 
   /**
    * 创建 
    */
-  create(params: LogxFuncParams) {
-    logx(processTypeEnum.CREATE, params.title, params.filePath)
+  create: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.CREATE, ...strArr)
   }
 
   /**
    * 编译 
    */
-  compile(params: LogxFuncParams) {
-    logx(processTypeEnum.COMPILE, params.title, params.filePath)
+  compile: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.COMPILE, ...strArr)
   }
 
   /**
    * 转换 
    */
-  convert(params: LogxFuncParams) {
-    logx(processTypeEnum.CONVERT, params.title, params.filePath)
+  convert: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.CONVERT, ...strArr)
   }
 
   /**
    * 复制
    */
-  copy(params: LogxFuncParams) {
-    logx(processTypeEnum.COPY, params.title, params.filePath)
+  copy: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.COPY, ...strArr)
   }
 
   /**
    * 复制
    */
-  generate(params: LogxFuncParams) {
-    logx(processTypeEnum.GENERATE, params.title, params.filePath)
+  generate: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.GENERATE, ...strArr)
   }
 
   /**
    * 修改
    */
-  modify(params: LogxFuncParams) {
-    logx(processTypeEnum.MODIFY, params.title, params.filePath)
+  modify: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.MODIFY, ...strArr)
   }
 
   /**
    * 错误
    */
-  error(params: LogxFuncParams) {
-    logx(processTypeEnum.ERROR, params.title, params.filePath)
+  error: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.ERROR, ...strArr)
   }
 
   /**
    * 警告
    */
-  warning(params: LogxFuncParams) {
-    logx(processTypeEnum.WARNING, params.title, params.filePath)
+  warning: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.WARNING, ...strArr)
   }
 
   /**
    * 提示
    */
-  remind(params: LogxFuncParams) {
-    logx(processTypeEnum.REMIND, params.title, params.filePath)
+  remind: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.REMIND, ...strArr)
   }
 
   /**
    * 删除
    */
-  unlink(params: LogxFuncParams) {
-    logx(processTypeEnum.UNLINK, params.title, params.filePath)
+  unlink: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.UNLINK, ...strArr)
   }
 
   /**
    * 引用
    */
-  reference(params: LogxFuncParams) {
-    logx(processTypeEnum.REFERENCE, params.title, params.filePath)
+  reference: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.REFERENCE, ...strArr)
   }
 }
 
@@ -103,14 +105,14 @@ class Logx {
  * @param logText 需要打印的文字
  * @param filePath 文件路径
  */
-const logx = (type: processTypeEnum, logText: string, filePath: string) => {
+const logx = (type: processTypeEnum, ...rest: string[]) => {
   const typeShow = processTypeMap[type]
   // 如果是字符串颜色，则调用chalk的子方法
   if (typeof typeShow.color === 'string') {
-    console.log(chalk[typeShow.color](typeShow.name), '', logText, '', filePath)
+    console.log(chalk[typeShow.color](typeShow.name), '', ...rest)
   } else { 
     // 如果是chalk颜色则直接调用color方法
-    console.log(typeShow.color(typeShow.name), '', logText, '', filePath)
+    console.log(typeShow.color(typeShow.name), '', ...rest)
   }
 }
 
