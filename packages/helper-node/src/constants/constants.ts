@@ -12,7 +12,10 @@ export const enum processTypeEnum {
   WARNING = 'warning',
   UNLINK = 'unlink',
   REFERENCE = 'reference',
-  REMIND = 'remind'
+  REMIND = 'remind',
+  PLUGIN = 'plugin',
+  READ = 'read',
+  END = 'end'
 }
 
 export interface IProcessTypeMap {
@@ -60,7 +63,7 @@ export const processTypeMap: IProcessTypeMap = {
     color: 'magenta'
   },
   [processTypeEnum.START]: {
-    name: '启动',
+    name: '开始',
     color: 'green'
   },
   [processTypeEnum.REFERENCE]: {
@@ -70,5 +73,17 @@ export const processTypeMap: IProcessTypeMap = {
   [processTypeEnum.REMIND]: {
     name: '提示',
     color: 'green'
-  }
+  },
+  [processTypeEnum.PLUGIN]: {
+    name: '插件',
+    color: 'yellow'
+  },
+  [processTypeEnum.READ]: {
+    name: '读取',
+    color: 'magentaBright'
+  },
+  [processTypeEnum.END]: {
+    name: '结束',
+    color: 'blueBright'
+  },
 }
