@@ -98,6 +98,27 @@ class Logx {
   reference: LogxFunc = (...strArr) => {
     logx(processTypeEnum.REFERENCE, ...strArr)
   }
+
+  /**
+   * 插件
+   */
+  plugin: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.PLUGIN, ...strArr)
+  }
+
+  /**
+   * 读取
+   */
+  read: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.READ, ...strArr)
+  }
+
+  /**
+   * 结束
+   */
+  end: LogxFunc = (...strArr) => {
+    logx(processTypeEnum.END, ...strArr)
+  }
 }
 
 /**
