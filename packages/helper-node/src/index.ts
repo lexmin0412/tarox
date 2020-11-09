@@ -1,5 +1,5 @@
 import Logx from './logx'
 
-export default {
+module.exports = {
   Logx
 }
