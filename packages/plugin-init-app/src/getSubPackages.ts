@@ -49,7 +49,7 @@ const handlePurifyArr = (weapp, h5, ctx, pages, subPackageItem, path) => {
       // return
     }
 
-    pages.push(sliceResPageRoute);
+    return sliceResPageRoute
   }
 }
 
@@ -58,7 +58,7 @@ const handlePurifyArr = (weapp, h5, ctx, pages, subPackageItem, path) => {
  */
 const getSubPackages = (ctx, options) => {
   return new Promise(resolve => {
-    const {homeRoute, weapp, compSuffix, h5, subPackages: subPackagesConfig} = options;
+    const { compSuffix, subPackages: subPackagesConfig} = options;
 
     Logx.start('进入扫描分包插件')
 
@@ -75,7 +75,11 @@ const getSubPackages = (ctx, options) => {
     if (subPackagesConfig && subPackagesConfig.includes) {
       includesSubPackages = subPackagesConfig.includes;
     }
-    let indexLines = '';
+    let indexLines = `
+/**
+ * 分包页面列表，由插件自动生成
+ */
+const subPackages = [`;
     const subPackages: any[] = [];
     const outerDirs = fs.readdirSync('./src');
 
@@ -95,10 +99,19 @@ const getSubPackages = (ctx, options) => {
       // 跳过特殊文件夹
       if (testFunc(item) && isDirectory(`./src/${item}`)) {
         Logx.read('发现分包', item)
-        const subPackageItem: any = {};
-        subPackageItem.root = item;
-        subPackageItem.name = item;
-        subPackageItem.pages = [];
+        let subPackageItem: any = ``;
+        subPackageItem = indexLines.indexOf('root') > -1 ?
+          `,
+  {
+    root: '${item}',
+    name: '${item}',
+    pages: [`
+    :        
+`
+  {
+    root: '${item}',
+    name: '${item}',
+    pages: [`
         const innerDir = fs.readdirSync(`./src/${item}`);
         // 去除后缀名
         innerDir.forEach(inItem => {
@@ -121,9 +134,10 @@ const getSubPackages = (ctx, options) => {
               if (filterDirs.includes(deepInnerItem)) {
                 return;
               }
-              const sliceRes = deepInnerItem.slice(0, deepInnerItem.indexOf('.'));
+              const sliceResPageRoute = deepInnerItem.slice(0, deepInnerItem.indexOf('.'));
               // 数组去重
-              handlePurifyArr(weapp, h5, ctx, subPackageItem.pages, item, `${inItem}/${sliceRes}`);
+              subPackageItem = `${subPackageItem}
+                '${sliceResPageRoute}',`
             });
           }
           else {
@@ -132,25 +146,22 @@ const getSubPackages = (ctx, options) => {
               return
             }
             const sliceRes = inItem.slice(0, inItem.indexOf('.'));
-            handlePurifyArr(weapp, h5, ctx, subPackageItem.pages, item, `${sliceRes}`);
+            // handlePurifyArr(weapp, h5, ctx, subPackageItem, item, `${sliceRes}`);
+            subPackageItem = `${subPackageItem}
+      '${sliceRes}',`
           }
         });
-        subPackages.push(subPackageItem);
+        indexLines = `${indexLines}${subPackageItem}
+    ]
+  }`
       }
     });
-    subPackages.forEach(item => {
-      if (item !== homeRoute) {
-        indexLines = indexLines ?
-          `${indexLines}
-  '${item}',` :
-          `'${item}',`;
-      }
-    });
-    indexLines = `${indexLines}
-
+    indexLines = `
+    ${indexLines}
 ]
 
-module.exports = pages`;
+module.exports = subPackages`;
+    console.log('indexLines', indexLines)
     fs.writeFileSync('./src/subPackages.js', indexLines)
     Logx.create('./src/subPackages.js', '成功')
     console.log('')

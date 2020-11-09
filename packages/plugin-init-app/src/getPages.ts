@@ -120,7 +120,6 @@ const pages = [
     })
 
     indexLines = `${indexLines}
-
 ]
 
 module.exports = pages`
