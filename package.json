@@ -4,7 +4,11 @@
   "scripts": {
     "install": "lerna bootstrap",
     "publish": "lerna publish",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "build:helper-node": "cd packages/helper-node && npm run build",
+    "build:plugin-init-app": "cd packages/plugin-init-app && npm run build",
+    "build:plugin-check-env": "cd packages/plugin-check-env && npm run build",
+    "build:plugin-mp": "cd packages/plugin-mp && npm run build"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
