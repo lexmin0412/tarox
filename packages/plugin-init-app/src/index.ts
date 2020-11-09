@@ -11,7 +11,7 @@ export default (ctx, options) => {
     // 扫描页面
     Promise.all([
       getPages(ctx, options),
-      getSubPackages(ctx, options)
+      getSubPackages(options)
     ])
     // 获取所有组件生成文件名
     getComponent(options)

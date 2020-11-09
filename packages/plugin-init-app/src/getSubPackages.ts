@@ -28,35 +28,9 @@ const filterDirs = [
 ]
 
 /**
- * 数组去重
- * @param {*} weapp
- * @param {*} h5
- * @param {*} ctx
- * @param {*} pages
- * @param {*} path
- */
-const handlePurifyArr = (weapp, h5, ctx, pages, subPackageItem, path) => {
-  // 去重
-  if (pages.indexOf(path) === -1 && path) {
-    // 拼接后的路由
-    const sliceResPageRoute = path;
-
-    subPackageItem = subPackageItem
-
-    if ((weapp && ctx.runOpts.platform === 'weapp') || (h5 && ctx.runOpts.platform === 'h5')) {
-      // handleMPFilter(weapp, ctx, pages, sliceResPageRoute)
-      // handleH5Filter(h5, ctx, pages, sliceResPageRoute)
-      // return
-    }
-
-    return sliceResPageRoute
-  }
-}
-
-/**
  * 扫描pages文件夹生成routes.js 即app.tsx中的pages配置项
  */
-const getSubPackages = (ctx, options) => {
+const getSubPackages = (options) => {
   return new Promise(resolve => {
     const { compSuffix, subPackages: subPackagesConfig} = options;
 
@@ -146,7 +120,6 @@ const subPackages = [`;
               return
             }
             const sliceRes = inItem.slice(0, inItem.indexOf('.'));
-            // handlePurifyArr(weapp, h5, ctx, subPackageItem, item, `${sliceRes}`);
             subPackageItem = `${subPackageItem}
       '${sliceRes}',`
           }
