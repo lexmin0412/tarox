@@ -2,8 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "install": "lerna bootstrap",
-    "publish": "lerna publish",
+    "install:all": "lerna bootstrap",
+    "publish:all": "lerna publish",
     "build": "lerna run build",
     "build:helper-node": "cd packages/helper-node && npm run build",
     "build:plugin-init-app": "cd packages/plugin-init-app && npm run build",
