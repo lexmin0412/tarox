@@ -1,6 +1,6 @@
 {
   "name": "@tarox/helper-node",
-  "version": "1.0.0-alpha.12",
+  "version": "1.0.0-alpha.17",
   "description": "",
   "main": "dist/index.js",
   "typings": "types/helper-node.d.ts",
