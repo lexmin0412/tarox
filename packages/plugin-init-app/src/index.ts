@@ -1,5 +1,5 @@
 import getPages from './getPages'
-import getComponent from './getComponents'
+// import getComponent from './getComponents'
 import getSubPackages from './getSubPackages'
 import { Logx } from '@tarox/helper-node'
 
@@ -14,6 +14,6 @@ export default (ctx, options) => {
       getSubPackages(options)
     ])
     // 获取所有组件生成文件名
-    getComponent(options)
+    // getComponent(options)
   })
 }
