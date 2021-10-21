@@ -1,6 +1,6 @@
 import getPages from './getPages'
 // import getComponent from './getComponents'
-import getSubPackages from './getSubPackages'
+// import getSubPackages from './getSubPackages'
 import { Logx } from '@tarox/helper-node'
 
 export default (ctx, options) => {
@@ -11,7 +11,7 @@ export default (ctx, options) => {
     // 扫描页面
     Promise.all([
       getPages(ctx, options),
-      getSubPackages(options)
+      // getSubPackages(options)
     ])
     // 获取所有组件生成文件名
     // getComponent(options)
