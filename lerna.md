@@ -18,8 +18,9 @@ lerna init
 
 4. 发布包
 
-执行 `lerna publish` 即可发布至npm。
+执行 `lerna publish` 即可发布至npm（需要先提交代码）。
 
 ## 参考
 
 - [lerna管理前端packages的最佳实践](http://www.sosout.com/2018/07/21/lerna-repo.html)
+- [lerna使用指南](https://www.jianshu.com/p/db3ee301af47)
