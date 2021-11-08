@@ -1,64 +1,29 @@
-name: Node CI
-
-# 指定触发action的事件
+name: 构建文档
 on:
   push:
-    # 指定触发指定事件的分支 仅master触发
     branches:
       - master
-  pull_request:
-    branches:
-      - master
+
 jobs:
-  build:
+  main:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x]
-
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ strategy.matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ strategy.matrix.node-version }}
-      - name: 执行npm run build
-        run: |
-          cd website
-          npm install
-          npm run build
-          cd build
-      - name: 进入dist文件夹 准备提交代码
-        run: |
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
 
-          cd website/build/
-          echo 'ls 查看dist文件夹下的所有文件'
-          ls
+    # react项目为npm run-script build，vue项目改为npm run build
+    - name: Install and Build
+      run: |
+        cd website
+        npm install
+        npm run build
 
-          echo 'git init'
-          git init
-
-          echo 'git config'
-          git config --global user.name ${{ secrets.USER_NAME }}
-          git config --global user.email ${{ secrets.USER_EMAIL }}
-
-          git remote add origin https://cathe-zhang:${{ secrets.USER_PWD }}@github.com/cathe-zhang/tarox.git
-
-          git fetch origin
-
-          echo 'git branch -r'
-          git branch -r
-          echo 'git branch -l'
-          git branch -l
-
-          echo 'git add .'
-          git add .
-
-          echo 'git commit -m "deploy"'
-          git commit -m 'deploy'
-
-          echo 'git push'
-
-          # 推送到远端
-          git push -f origin HEAD:website
+    # react项目的FOLDER为build，vue项目改为dist
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: website
+        FOLDER: build
