@@ -1,6 +1,6 @@
 {
   "name": "@tarox/plugin-internal",
-  "version": "1.0.0-alpha.21",
+  "version": "1.0.0-alpha.22",
   "description": "Taro开放式跨团队协作插件",
   "main": "index.js",
   "scripts": {
@@ -50,7 +50,7 @@
     "http-proxy-middleware": "^1.0.3",
     "path-to-regexp": "^6.1.0"
   },
-	"publishConfig": {
+  "publishConfig": {
     "access": "public"
   },
   "gitHead": "1d32c615b53b0b775d1772a6519936b7a360519b"
