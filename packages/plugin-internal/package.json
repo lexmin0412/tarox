@@ -1,6 +1,6 @@
 {
   "name": "@tarox/plugin-internal",
-  "version": "1.0.0-alpha.20",
+  "version": "1.0.0-alpha.21",
   "description": "Taro开放式跨团队协作插件",
   "main": "index.js",
   "scripts": {
