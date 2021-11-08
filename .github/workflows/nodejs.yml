@@ -26,4 +26,4 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: website
-        FOLDER: build
+        FOLDER: website/build
