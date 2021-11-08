@@ -49,5 +49,6 @@
     "glob": "^7.1.6",
     "http-proxy-middleware": "^1.0.3",
     "path-to-regexp": "^6.1.0"
-  }
+  },
+  "gitHead": "f291dc39c291813d02712273224c876649513bd7"
 }
