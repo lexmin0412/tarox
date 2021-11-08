@@ -1,5 +1,7 @@
 # Taro生态工具集
 
+[点此查看文档](https://lexmin0412.github.io/tarox)
+
 <a href="https://lexmin0412.github.io/tarox"><img src="https://user-images.githubusercontent.com/24385370/140790534-91795576-6b9f-48ff-af3a-2a6cc3c729ee.png" /></a>
 
 ## 工具包列表
