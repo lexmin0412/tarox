@@ -33,50 +33,50 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Taro官方站点',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: 'Taro',
+              to: 'https://taro-docs.jd.com/taro/docs/README/index.html',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              label: 'Taro - Github',
+              to: 'https://github.com/NervJS/taro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: '更多项目',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'youtils',
+              href: 'https://github.com/lexmin0412/youtils-cli',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'taro-template',
+              href: 'https://github.com/lexmin0412/taro-template',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'taro-xui',
+              href: 'https://github.com/lexmin0412/taro-xui',
             },
           ],
         },
         {
-          title: 'More',
+          title: '关于我',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: '掘金',
+              to: 'https://juejin.cn/user/3984285871645630',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/lexmin0412',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Lexmin's Project, Inc. Built with Docusaurus.`,
     },
   },
   presets: [

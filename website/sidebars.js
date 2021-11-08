@@ -1,6 +1,5 @@
 module.exports = {
   someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
+    插件: ['plugin-internal', 'plugin-init-app', 'plugin-mp']
   },
 };

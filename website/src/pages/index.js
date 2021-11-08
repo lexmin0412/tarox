@@ -8,32 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
+    title: 'Plugin Init App',
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        配置初始化插件，自动生成页面及组件入口文件。
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Plugin Internal',
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Taro跨团队协作插件，基于 gitlab api，实现一主多从的多团队开发模式。
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Plugin Mp',
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        taro小程序端插件，目前仅用于不同环境下project.config.json文件的动态生成。
       </>
     ),
   },
@@ -48,7 +45,7 @@ function Feature({imageUrl, title, description}) {
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
-      <h3>{title}</h3>
+      <h3 style={{textAlign: 'center'}}>{title}</h3>
       <p>{description}</p>
     </div>
   );
