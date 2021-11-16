@@ -6,12 +6,11 @@
 
 ## 工具包列表
 
-|包名| 描述 | 说明 |
-|---|---|---|
-|plugin-check-env|环境变量检查插件|
-|plugin-init-app|初始化插件|
-|plugin-internal|跨团队多包协作插件|
-|plugin-mp|小程序插件|
-|helper-node|node.js工具类|
+- @tarox/plugin-internal  跨团队协作插件
+- @tarox/plugin-check-env  环境变量检查插件
+- @tarox/plugin-init-app  页面/组件自动扫描初始化插件
+- @tarox/plugin-mp  小程序插件
+- [@tarox/build](https://github.com/lexmin0412/tarox-build)  构建脚本
+- helper-node  node.js工具类
 
 
