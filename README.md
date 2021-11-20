@@ -8,6 +8,7 @@ X 代表着无限可能，而 TaroX 则代表 Taro 中的无限可能，它是�
 
 ## 部分工具包列表
 
+- @tarox/ui Taro3 React UI 库
 - @tarox/plugin-internal  跨团队协作插件
 - @tarox/plugin-check-env  环境变量检查插件
 - @tarox/plugin-init-app  页面/组件自动扫描初始化插件
