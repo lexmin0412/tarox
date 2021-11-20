@@ -10,6 +10,7 @@
 - @tarox/plugin-check-env  环境变量检查插件
 - @tarox/plugin-init-app  页面/组件自动扫描初始化插件
 - @tarox/plugin-mp  小程序插件
+- @tarox/plugin-generate 模板文件一键生成插件
 - [@tarox/build](https://github.com/lexmin0412/tarox-build)  构建脚本
 - helper-node  node.js工具类
 
