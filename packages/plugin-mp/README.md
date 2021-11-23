@@ -2,7 +2,7 @@
 
 taro小程序端插件，目前仅用于不同环境下project.config.json文件的动态生成。
 
-查看更新日志请前往[CHANGELOG](https://github.com/cathe-zhang/taro-plugin-mp/blob/master/CHANGELOG.md)
+查看更新日志请前往[CHANGELOG](https://github.com/lexmin0412/taro-plugin-mp/blob/master/CHANGELOG.md)
 
 ## Usage
 

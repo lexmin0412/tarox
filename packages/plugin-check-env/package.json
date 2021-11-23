@@ -19,18 +19,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cathe-zhang/taro-plugin-check-env.git"
+    "url": "https://github.com/lexmin0412/taro-plugin-check-env.git"
   },
   "keywords": [
     "taro",
     "plugins"
   ],
-  "author": "cathe-zhang",
+  "author": "lexmin0412",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cathe-zhang/taro-plugin-check-env/issues"
+    "url": "https://github.com/lexmin0412/taro-plugin-check-env/issues"
   },
-  "homepage": "https://github.com/cathe-zhang/taro-plugin-check-env#readme",
+  "homepage": "https://github.com/lexmin0412/taro-plugin-check-env#readme",
   "devDependencies": {
     "@types/express": "^4.17.3",
     "@types/jest": "^25.1.4",
