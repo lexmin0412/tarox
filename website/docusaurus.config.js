@@ -1,11 +1,11 @@
 module.exports = {
   title: 'TaroX',
-  tagline: 'Taro3生态工具集',
+  tagline: 'Taro 生态系统',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/tarox/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
-  organizationName: 'cathe-zhang', // Usually your GitHub org/user name.
+  organizationName: 'lexmin0412', // Usually your GitHub org/user name.
   projectName: 'tarox', // Usually your repo name.
   themeConfig: {
     navbar: {
@@ -22,8 +22,13 @@ module.exports = {
           position: 'left',
         },
         // {to: 'blog', label: 'Blog', position: 'left'},
+				{
+					href: 'https://github.com/lexmin0412/tarox-ui',
+					label: 'TaroX UI',
+					position: 'right'
+				},
         {
-          href: 'https://github.com/cathe-zhang/tarox',
+          href: 'https://github.com/lexmin0412/tarox',
           label: 'GitHub',
           position: 'right',
         },
