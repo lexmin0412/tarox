@@ -11,10 +11,6 @@
   "keywords": [],
   "author": "lexmin0412 <zhangle_media@hotmail.com>",
   "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^14.14.6",
-    "chalk": "^4.1.0"
-  },
   "publishConfig": {
     "access": "public"
   }
