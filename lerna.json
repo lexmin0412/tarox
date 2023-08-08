@@ -1,14 +1,15 @@
 {
-	"packages": [
-		"packages/*"
-	],
-	"npmClient": "npm",
-	"version": "1.0.0-alpha.22",
-	"command": {
-		"publish": {
-			"ignoreChanges": [],
-			"message": "chore(release): publish %s",
-			"registry": "https://registry.npmjs.org"
-		}
-	}
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "npm",
+  "version": "1.0.0-alpha.22",
+  "command": {
+    "publish": {
+      "ignoreChanges": [],
+      "message": "chore(release): publish %s",
+      "registry": "https://registry.npmjs.org"
+    }
+  },
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
